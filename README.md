@@ -1,8 +1,11 @@
 # LEI Issuer Fetcher & Cache Service (Python)
 
-Fetches LEI Issuers from the given GLEIF API endpoint, handling pagination. It parses the JSON and extracts, for each issuer, at least these fields:  
+Fetches LEI Issuers from the given GLEIF API endpoint, handling pagination. It parses the JSON and extracts, for each issuer, below fields:  
 -LEI code  
 -Issuer name  
+-Marketing Name  
+-Website  
+-Accreditation Date  
 It also has in-memory cache implementation of 60 seconds for request coming to same endpoint. It also supports concurrent fetching of multiple pages, so it makes multiple requests to different endpoints/parameters at the same time.
 
 ## 1. Install packages
@@ -40,5 +43,5 @@ Test both the web methods using Swagger endpoint shown above.
 5. test_cache_expiry  
    This test checks for the cache expiry once time duration completes.
 
-Run all the above tests using below command in terminal from the root folder of the project.
+Run all the above tests using below command in terminal from the root folder of the project.  
 python -m pytest -v
